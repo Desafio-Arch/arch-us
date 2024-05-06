@@ -29,8 +29,8 @@ public class AdminUserConfig implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-        this.roleService.saveRole(new Role("admin", 1));
-        this.roleService.saveRole(new Role("basic", 2));
+        this.roleService.saveRole(new Role("ADMIN", 1));
+        this.roleService.saveRole(new Role("BASIC", 2));
 
         var roleAdmin = this.roleService.findRoleByNameContainingIgnoreCase(enumRole.ADMIN.name());
         var userAdmin = userService.findByUserName("admin");
