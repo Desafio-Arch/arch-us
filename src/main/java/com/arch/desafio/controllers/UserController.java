@@ -53,7 +53,8 @@ public class UserController {
     @Operation(summary = "Obter todos os usuários", description = "Retorna todos os usuários cadastrados.")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Usuários encontrados"),
-            @ApiResponse(responseCode = "204", description = "Nenhum usuário encontrado")
+            @ApiResponse(responseCode = "204", description = "Nenhum usuário encontrado"),
+            @ApiResponse(responseCode = "403", description = "Acao nao autorizada")
     })
     @PreAuthorize("hasAnyAuthority('SCOPE_ADMIN')")
     public ResponseEntity<List<User>> getAllUsers() {

@@ -14,7 +14,7 @@ public class AuthToken {
 
     public static BuildTokenData getBuildTokenData(User user) {
         var now = Instant.now();
-        var expiresIn = 300L;
+        var expiresIn = 5000L;
 
         var scopes = Optional.of(user).get().getRoles()
                 .stream()
